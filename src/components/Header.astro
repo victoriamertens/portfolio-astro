@@ -1,0 +1,54 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
+import profile from '/Headshot.kuzmin.jpg'; 
+---
+
+<header>
+	<h2>
+		{SITE_TITLE}
+	</h2>
+	<nav class="header-bar">
+		
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/projects">Projects</HeaderLink>
+		<img src={profile} /> 
+		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href="/blog">Blog</HeaderLink>
+		
+		
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0em 0 2em;
+		
+	}
+	h2 {
+		margin:  0;
+		font-size: 32pt;
+  background-image: linear-gradient(to right, rgb(7, 115, 246), rgb(2, 162, 248), rgb(0, 255, 213)
+	);
+	/* background-image: linear-gradient(to right, red , yellow); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	}
+
+	.header-bar{ 
+		display: flex; 
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		
+		/* border: 1px solid black; */
+	}
+
+	.header-bar img{ 
+		width: 30%;
+		border-radius: 100%; 
+		margin: 20px; 
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+
+	}
+</style>
