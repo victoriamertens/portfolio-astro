@@ -7,14 +7,17 @@ const props = Astro.props;
 
 <div class="project-card"> 
 <div class="project-header">
+  <img src={props.image_src}/>
   <h2>{props.title}</h2>
 </div>
 <div class="project-body"> 
-  <img src={props.image_src}/>
+  <video controls autoplay>
+    <source src={props.video_src} type="video/mp4">
+  </video>
   <p>{props.description}</p>
 </div>
 <div class="project-footer"> 
-  <button>View Details</button>
+  <a href={props.url}>View Details</a>
 </div>
 </div>
 
@@ -23,11 +26,13 @@ const props = Astro.props;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
+  max-width: 600px;
   border: grey solid 2px; 
   padding: 15px; 
   border-radius: 5px;
   box-shadow: 10px 10px 15px grey;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .project-body { 
@@ -37,7 +42,16 @@ const props = Astro.props;
 }
 
 .project-card img{ 
-  width: 200px;
+  width: 100px;
   border-radius: 100%;
+}
+.project-header{ 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-body video { 
+  width: 80%;
 }
 </style>

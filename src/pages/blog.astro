@@ -35,8 +35,55 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	<body>
 		<Header />
 		<main>
+			<h1><mark>Writing Projects about code, life, and whatever is in-between.</mark></h1>
+			
 			<section>
-				<ul>
+				<div>
+				<p>
+					 <a
+						href="https://medium.com/@victoria.mertens44/youre-doing-what-e881df6f8e34"
+						>You’re doing, what? - Shifting Gears Mid-Career
+					</a> 
+				</p>
+				<p>October 13, 2022.</p>
+			</div>
+				<div>
+				<p>
+					<a
+					 href="https://medium.com/@victoria.mertens44/what-i-know-at-28-that-i-never-would-have-known-at-18-207bddb0f1f9"
+					 >What I know at 28 that I NEVER would have known at 18.
+				 </a>
+			 </p>
+			 <p>October 31, 2022.</p>
+			</div>
+			<div>
+			 <p>
+				<a
+				 href="https://medium.com/@victoria.mertens44/accelerated-learning-day-one-can-you-keep-up-536421a84b68"
+				 >So, you want to be a Software Developer?— Day One: Can you keep up?
+			 </a> 
+		 </p>
+		 <p>November 1, 2022.</p>
+		</div>
+		 <div>
+		 <p>
+			<a
+			 href="https://medium.com/@victoria.mertens44/accelerated-learning-the-weekly-structure-68ca052c8044"
+			 >So, you want to be a Software Developer? — The Weekly Structure
+		 </a>
+	 </p>
+	 <p>November 14, 2022.</p>
+	</div>
+	 <div>
+	 <p>
+		<a
+		 href="https://medium.com/@victoria.mertens44/so-you-want-to-be-a-software-developer-learning-in-public-2d6b5a84d3a9"
+		 >So, you want to be a Software Developer? — Learning in Public
+	 </a>
+ </p>
+ <p>January 3, 2023.</p>
+</div>
+				<!-- <ul>
 					{
 						posts.map((post) => (
 							<li>
@@ -51,9 +98,24 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 							</li>
 						))
 					}
-				</ul>
+				</ul> -->
 			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>mark{ 
+	background-color: rgba(138, 201, 240, 0.75);
+	padding: 5px; 
+}
+
+section{ 
+	display: flex; 
+	flex-direction: column-reverse;
+
+
+}
+
+</style>
+

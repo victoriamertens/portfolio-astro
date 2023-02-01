@@ -21,8 +21,26 @@ to help you pick out your outfit in the morning.`
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" description={hcDescription}/>
+			<h1><mark>Software Development Projects: </mark></h1>
+			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" video_src="/demo_vid.mp4"url="/projects/happy_closet" description={hcDescription}/>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+mark{ 
+	background-color: rgba(138, 201, 240, 0.75);
+	padding: 5px; 
+}
+
+h1{ 
+	text-align: center;
+}
+
+main{ 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+</style>

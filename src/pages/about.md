@@ -3,7 +3,7 @@ layout: '../layouts/BlogPost.astro'
 title: 'About Me'
 description: 'Lorem ipsum dolor sit amet'
 updatedDate: 'January 2023'
-heroImage: '/placeholder-about.jpg'
+# heroImage: '/placeholder-about.jpg'
 ---
 
 My first experience with any sort of code came in a college, when I enrolled in a class called Creative Writing for Alternative Formats. Yes, you read that right. My introduction to code was not in a computer science class or math class but instead was a part of my creative writing minor.

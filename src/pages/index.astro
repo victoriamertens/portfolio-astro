@@ -21,17 +21,14 @@ to help you pick out your outfit in the morning.`
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
+			<div class="card">
 			<h1><mark>Software Developer seeking employer for steady relationship.</mark></h1>
 			
-			<p>
-				Welcome to my website! 
-			</p>
-			<p>
-				Take your time settling in. There is a lot to see. 
-			</p>
-			<h2>Projects</h2>
-			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" description={hcDescription}/>
-			
+<p>I am a passionate geek, wholeheartedly and without apology. I love researching and often go on 'deep dives' into the topics I am interested in at the time. Currently, those dives tend to be into topics related to Software Development, clothing design, and food science and history. Hit me up if you have a favorite family recipe! I am always up for a good recipe for Pad-Thai, Ramen, or Hot Dish. </p>	
+		</div>
+		<h2>Projects</h2>
+			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" video_src="/demo_vid.mp4" description={hcDescription} url="/projects/happy_closet"/>
+		
 			<p>
 				Looking for a bit more? Check out my <a
 					href="https://www.linkedin.com/in/victoria-mertens-878a571a3/"
@@ -44,10 +41,24 @@ to help you pick out your outfit in the morning.`
 </html>
 
 <style> 
+.card{
+	max-width: 700px;
+	margin: 12px;
+}
 mark{ 
 	background-color: rgba(138, 201, 240, 0.75);
 	padding: 5px; 
-	line-height: 10px; 
+}
+
+main { 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 }
+
+h2{
+	margin-top: 50px;
+}
+
 </style>
