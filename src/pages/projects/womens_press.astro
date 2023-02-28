@@ -14,9 +14,250 @@ import ProjectDetailsSample from '../../components/ProjectDetailsSample.astro';
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <h1><mark>Minnesota Women's Press Manager : Client Project</mark></h1>
-      <p>Under Construction...coming soon!</p>
+      <div class="title">
+        <h1 class="title">
+          <mark>Minnesota Women's Press Content Manager</mark>
+        </h1>
+        <div class="test">
+          <div class="block">
+            <h2 class="inline">Our Client:</h2>
+            <h3 class="inline-2">
+              <a href="https://www.womenspress.com/">Minnesota Women's Press</a>
+            </h3>
+            <p class="inline">- a Minneapolis based, non-profit publication</p>
+          </div>
+          <div class="block">
+            <h2 class="inline">Our Team:</h2>
+            <p class="inline-2">
+              Anthony Dampier, Brett Gebbie, Josh Clemons, Paolo Dubuque, and
+              myself, Victoria Mertens.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
+    <div class="main">
+      <div class="sticky">
+        <div class="box"></div>
+        <video controls autoplay muted>
+          <source src="/mwp-demo-website.mp4" type="video/mp4" />
+        </video>
+        <p class="video-tag">
+          <a href="/projects/mwp_presentation"
+            >Watch our team's full presentation here</a
+          >
+        </p>
+      </div>
+
+      <div class="whole-doc">
+        <h3>The Ask:</h3><p>
+          The editing team at Minnesota Women's Press (MWP) came to us with the
+          challenge of creating an application that simplified their publication
+          process. The most important thing to them was an application that was
+          sensitive to their time, meaning that it was quick and easy to find
+          the information they were looking for and that entering information
+          into the database could be done with small amounts of info.
+        </p>
+        <p>
+          With their needs in mind, the team and I built the Minnesota Women’s
+          Press Content Manager.
+        </p>
+        <h3>
+          From a software perspective, the Women's Press Content Manager allows
+          the editing team to do four major things:
+        </h3>
+        <ol>
+          <li>
+            <strong>Add and Track Stories.</strong> The application was designed
+            to allow any member of the organization's multi-person team to easily
+            find and track the status of stories in the database. That means all
+            users can create a story in the database, add information like due dates
+            and tasks, and track its status all the way to story completion and publication.
+          </li>
+          <li>
+            <strong>Save Contact Information.</strong> With the same basic user interface
+            design as the Stories page, each member of the team can add important
+            contacts like authors, sources, and story subjects, to the application
+            and attach to the stories they are affiliated with. This is an important
+            function for the MWP team because it allows them to organize contact
+            information based on stories.
+          </li>
+          <li>
+            <strong>Assign Stories to Publication Themes.</strong> The MWP team publishes
+            stories each month based on a monthly theme. A user can assign a theme
+            to any month of the year, making the year's planning easier for the editing
+            team, and assign stories that are in the database to that month's themes.
+          </li>
+          <li>
+            <strong>Consult the Story Archive.</strong> Once all tasks are completed
+            for each story, and the story is passed its publication date, it is displayed
+            on the archive page for the user to see. This page is easily searchable,
+            so the team can consult previous stories if needed.
+          </li>
+        </ol>
+        <h3>The Tasks:</h3>
+        <p>
+          For the project, my primary role was focused on the backend. This
+          included building the server, creating the relational database,
+          writing the application APIs, and writing the SQL queries to retrieve
+          the data. When the backend was written and communicating properly with
+          the frontend, my role in the team was 'bug-hunting' and
+          'bug-squishing'. This required running tests to ensure that all parts
+          of our application was working effectively and, in the event a bug was
+          found, isolating and fixing the problem.
+        </p>
+        <h3>The Challenges: Complex SQL Queries</h3>
+        <p>
+          The database we created is highly relational. Except for the user
+          table, all database tables were connected to each other through a
+          chain. While the database design was not complex, the data we were
+          requesting from the database was. In order for our user-interface to
+          function in the way it was designed, we needed a SQL query that could
+          grab every story from the story table, grab every contact, theme, and
+          tag associated to each story, and every invoice data associated to
+          each contact associated to the story. Jokingly, our team named these
+          queries our 'Herculean SQL Queries' because of the heavy lifting they
+          had to perform.
+        </p>
+        <p>
+          I learned a great deal from the experience. I learned more about
+          PostgreSQL, including json_agg, the different types of joins (and the
+          pros and cons of each), and the beauty of the Promise.all method. If
+          you had asked me before the project which side of the http request I
+          preffered, frontend or backend, I would have said Frontend. After
+          working on the backend for this project, however, I am more torn. In
+          working on the backend, I learned more about relational databases and
+          SQL queries than I thought I would. I enjoyed the challenge of it, the
+          critical problem solving it required, and the opportunity to work with
+          complex data.
+        </p>
+        <h3>The Growth:</h3>
+        <p>
+          While I gained more software skills than I knew before, the project
+          was a great opportunity to practice and hone the softer skills
+          necessary to work on a team and build a product for a client. <p>
+            Overall, the project was an exercise in <strong
+              >communication</strong
+            >
+            and <strong>collaboration</strong>. Practicing how to best explain
+            my ideas, how to effectively listen to the ideas of others, and how
+            to navigate <strong>decision making</strong> as a team, especially on
+            a highly restricted deadline, were core tasks of this project.
+          </p>
+        </p><p>
+          I have a lot of reasons to feel proud of this project, but one of my
+          proudest moments came when we were discussing the design of our
+          relational database. I was very excited to be working with complex
+          data, so the night before our meeting I synthesized the needs of our
+          client into a high level design of our database. During the meeting
+          the next day, I took a <strong>leadership</strong> role, taking the initiative
+          to lead the discussion. I believe that meeting was our most productive
+          because of the initiative I made. By opening the meeting with a general
+          discussion, and taking the time to write down the team's thoughts and ideas
+          on the whiteboard, a sense of true collaboration could be felt in the room
+          because we could physically see that everyone's voice was being heard.
+          Then, when I pitched my idea, I was able to explain it through the concerns
+          and thoughts of the team which made agreeing on the design easier.
+        </p>
+        <p>
+          I also throughly enjoyed the opportunity to present our application. I
+          enjoy the challenge of writing a presentation that explains and
+          engages, that takes a complex thing like a software application and
+          makes it accessible to a larger audience. If you would like to view
+          our team's application presentation, you can see the video <a
+            href="/projects/mwp_presentation">here</a
+          >.
+        </p>
+      </div>
+    </div>
+
     <Footer />
+    <style>
+      .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .whole-doc {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        max-width: 970px;
+        margin-top: 70px;
+      }
+      .inline {
+        display: inline;
+      }
+      .inline-2 {
+        display: inline;
+        margin-left: 10px;
+      }
+      .video-tag a {
+        display: inline;
+      }
+      .test {
+        margin-bottom: 30px;
+        margin-top: 10px;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+        max-width: 990px;
+      }
+      .video-tag {
+        background-color: white;
+        margin-top: -2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0px;
+      }
+      mark {
+        background-color: rgba(138, 201, 240, 0.75);
+        padding: 5px;
+      }
+      .sticky {
+        width: 100%;
+        position: sticky;
+        top: 0px;
+        height: 100%;
+        box-shadow: 10px 10px 15px;
+        max-width: 1010px;
+      }
+      .box {
+        height: 20px;
+        background-color: white;
+      }
+      .description {
+        width: 80%;
+        margin: auto;
+      }
+      @media (max-width: 1483px) {
+        .video {
+          width: 100%;
+
+          box-shadow: 10px 10px 15px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 414px) {
+        .inline {
+          display: block;
+        }
+        .inline-2 {
+          display: block;
+        }
+      }
+    </style>
   </body>
 </html>

@@ -10,55 +10,78 @@ help solve the headache of the morning routine.
 The application saves a virtual copy of the items 
 in your closet, allowing you to make outfits based 
 on those items. Happy Closet takes this information 
-to help you pick out your outfit in the morning.`
+to help you pick out your outfit in the morning.`;
+let mwpDescription =
+  "Minnesota Women's Press Content Manager is a project my team designed and built for the editing team at the non-profit publication of the same name.";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<div class="card">
-			<h1><mark>Software Developer seeking employer for steady relationship.</mark></h1>
-			
-<p>I am a passionate geek, wholeheartedly and without apology. I love researching and often go on 'deep dives' into the topics I am interested in at the time. Currently, those dives tend to be into topics related to Software Development, clothing design, and food science and history. Hit me up if you have a favorite family recipe! I am always up for a good recipe for Pad-Thai, Ramen, or Hot Dish. </p>	
-		</div>
-		<h2>Projects</h2>
-			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" video_src="/demo_vid.mp4" description={hcDescription} url="/projects/happy_closet"/>
-		
-			<p>
-				Looking for a bit more? Check out my <a
-					href="https://www.linkedin.com/in/victoria-mertens-878a571a3/"
-					>LinkedIn
-				</a> or <a href="https://twitter.com/vmertz44">Twitter</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div class="card">
+        <h1>
+          <mark
+            >Software Developer seeking employer for steady relationship.</mark
+          >
+        </h1>
+
+        <p>
+          I am a passionate geek, wholeheartedly and without apology. I love
+          researching and often go on 'deep dives' into the topics I am
+          interested in at the time. Currently, those dives tend to be into
+          topics related to Software Development, clothing design, and food
+          science and history. Hit me up if you have a favorite family recipe! I
+          am always up for a good recipe for Pad-Thai, Ramen, or Hot Dish.
+        </p>
+      </div>
+      <h2>Projects</h2>
+      <Card
+        title="Happy Closet"
+        image_src="/happy_closet_icon.jpg"
+        video_src="/demo_vid.mp4"
+        description={hcDescription}
+        url="/projects/happy_closet"
+      />
+      <Card
+        title="Minnesota Women's Press Content Manager"
+        image_src="/MWP-icon.png"
+        video_src="/mwp-demo-website.mp4"
+        url="/projects/womens_press"
+        description={mwpDescription}
+      />
+
+      <p>
+        Looking for a bit more? Check out my <a
+          href="https://www.linkedin.com/in/victoria-mertens-878a571a3/"
+          >LinkedIn
+        </a> or <a href="https://twitter.com/vmertz44">Twitter</a>.
+      </p>
+    </main>
+    <Footer />
+    <style>
+      .card {
+        max-width: 700px;
+        margin: 12px;
+      }
+      mark {
+        background-color: rgba(138, 201, 240, 0.75);
+        padding: 5px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        margin-top: 50px;
+      }
+    </style>
+  </body>
 </html>
-
-<style> 
-.card{
-	max-width: 700px;
-	margin: 12px;
-}
-mark{ 
-	background-color: rgba(138, 201, 240, 0.75);
-	padding: 5px; 
-}
-
-main { 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-}
-
-h2{
-	margin-top: 50px;
-}
-
-</style>

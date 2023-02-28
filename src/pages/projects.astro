@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Card from '../components/ProjectsSample.astro'; 
+import Card from '../components/ProjectsSample.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 let hcDescription = `Happy Closet is an application created to 
@@ -10,37 +10,52 @@ help solve the headache of the morning routine.
 The application saves a virtual copy of the items 
 in your closet, allowing you to make outfits based 
 on those items. Happy Closet takes this information 
-to help you pick out your outfit in the morning.`
+to help you pick out your outfit in the morning.`;
+
+let mwpDescription =
+  "Minnesota Women's Press Content Manager is a project my team designed and built for the editing team at the non-profit publication of the same name.";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1><mark>Software Development Projects: </mark></h1>
-			<Card title="Happy Closet" image_src="/happy_closet_icon.jpg" video_src="/demo_vid.mp4"url="/projects/happy_closet" description={hcDescription}/>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1><mark>Software Development Projects:</mark></h1>
+      <Card
+        title="Happy Closet"
+        image_src="/happy_closet_icon.jpg"
+        video_src="/demo_vid.mp4"
+        url="/projects/happy_closet"
+        description={hcDescription}
+      />
+      <Card
+        title="Minnesota Women's Press Content Manager"
+        image_src="/MWP-icon.png"
+        video_src="/mwp-demo-website.mp4"
+        url="/projects/womens_press"
+        description={mwpDescription}
+      />
+    </main>
+    <Footer />
+    <style>
+      mark {
+        background-color: rgba(138, 201, 240, 0.75);
+        padding: 5px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </body>
 </html>
-
-<style>
-mark{ 
-	background-color: rgba(138, 201, 240, 0.75);
-	padding: 5px; 
-}
-
-h1{ 
-	text-align: center;
-}
-
-main{ 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-</style>
