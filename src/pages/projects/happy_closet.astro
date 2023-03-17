@@ -3,175 +3,197 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
-import ProjectDetailsSample from '../../components/ProjectDetailsSample.astro'; 
-
-
+import ProjectDetailsSample from '../../components/ProjectDetailsSample.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
       <h1><mark>Happy Closet: Solo Project</mark></h1>
       <div class="sticky">
-        
         <video controls autoplay>
-          <source src="/demo_vid.mp4" type="video/mp4">
-        </video> 
-    </div>
+          <source src="/HC-demo-vid-compressed.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="whole-doc">
         <div class="header-left"></div>
 
         <div class="header-right">
           <div class="content">
-            <p>We have all been in this scenario. You wake up, open your closet doors, and immediately you are faced with 
-            an unpleasant emotion. Maybe you are running late and don’t have time to pick a nice outfit, maybe your closet
-            is disorganized, or maybe you simply don’t know what to wear. Insert Happy Closet. Happy Closet acts as a virtual 
-            copy of your closet, allowing users to put together outfits based on the items in your closet. The application 
-            saves these outfits in a log to help users get ready in the morning.</p>
+            <p>
+              We have all been in this scenario. You wake up, open your closet
+              doors, and immediately you are faced with an unpleasant emotion.
+              Maybe you are running late and don’t have time to pick a nice
+              outfit, maybe your closet is disorganized, or maybe you simply
+              don’t know what to wear. Insert Happy Closet. Happy Closet acts as
+              a virtual copy of your closet, allowing users to put together
+              outfits based on the items in your closet. The application saves
+              these outfits in a log to help users get ready in the morning.
+            </p>
           </div>
 
+          <div class="content">
+            <h3>
+              From a software perspective, Happy Closet allows the user to do
+              four major things:
+            </h3>
+            <ol>
+              <li><h4>Register as a unique user.</h4></li>
+              <p>
+                The application uses Passport, an authentication middleware for
+                Node.js, and BcryptJS to generate hash passwords, in order to
+                create a user and keep their information secure.
+              </p>
+              <li>
+                <h4>Create a clothing 'item' in the user's closet database.</h4>
+              </li>
+              <p>
+                An 'item' is a list of data that represents an article of
+                clothing. The data includes a name, cost, color, brand, and
+                category, along with a photograph of the item. The photo is
+                uploaded to Amazon's Simple Storage Service (S3), where the
+                image is stored in the cloud and accessible via a specific url.
+                For more information on the process, visit Amazon Web Services
+                Website.
+              </p>
+              <li><h4>Create an 'outfit' in the user's outfit log.</h4></li>
+              <p>
+                An 'outfit' is a combination of items the user selects in the
+                app. The user selects the items they wore, and adds data on
+                their initial reaction rating to the outfit, and a comment about
+                their thoughts on the outfit.
+              </p>
+              <li><h4>View both the user's items and past outfits.</h4></li>
+              <p>
+                The user can view past outftis on the 'outfits', where they have
+                the ability to filter the outfits based on what reaction rating
+                they gave to each outfit. The user can also view the items in
+                their 'closet' in the same way.
+              </p>
+            </ol>
+          </div>
 
-        <div class="content">
-          <h3>From a software perspective, Happy Closet allows the user to do four major things:</h3>
-          <ol>
-          <li><h4>Register as a unique user.</h4> </li>
-            <p>The application uses Passport, an authentication middleware for Node.js, and BcryptJS to generate hash passwords, 
-          in order to create a user and keep their information secure.</p>
-          <li><h4> Create a clothing 'item' in the user's closet database.</h4> </li>
-            <p>An 'item' is a list of data that represents an article of clothing. The data includes a name, cost, color, brand, 
-            and category, along with a photograph of the item. The photo is uploaded to Amazon's Simple Storage Service (S3), 
-            where the image is stored in the cloud and accessible via a specific url. For more information on the process, visit
-            Amazon Web Services Website.</p>
-          <li><h4>Create an 'outfit' in the user's outfit log.</h4> </li>
-           <p>An 'outfit' is a combination of items the user selects in the app. The user selects the items they wore, and adds 
-            data on their initial reaction rating to the outfit, and a comment about their thoughts on the outfit.
-           </p>
-          <li><h4> View both the user's items and past outfits.</h4> </li>
-            <p>The user can view past outftis on the 'outfits', where they have the ability to filter the outfits based on what 
-           reaction rating they gave to each outfit. The user can also view the items in their 'closet' in the same way.</p>  
-          </ol>
-        </div>
+          <div class="content">
+            <h3>Project Challenges: Amazon Web Services</h3>
+            <p>
+              The biggest challenge I faced with this project was using Amazon's
+              Simple Storage Service (S3) for image upload. One of my goals for
+              this project was to stretch and challenge myself. S3 provided a
+              great opportunity to challenge myself while also learning more
+              about web operations. I cannot understate how much I learned from
+              this challenge. Conceptually, it stretched my understanding of
+              cloud-based storage, application security, local memory, and
+              writing code for multiple environments with deployment, all of
+              which has deepened how I think and talk about software
+              development. Additionally, it taught me how to navigate lengthy
+              and complex documentation. While it gave me a large headache at
+              times, I developed an organized way to approach documentation to
+              more efficiently find the answers I am looking for.
+            </p>
+          </div>
 
-        <div class="content">
-          <h3>Project Challenges: Amazon Web Services</h3>
-          <p>The biggest challenge I faced with this project was using Amazon's Simple Storage Service (S3) for image upload. 
-           One of my goals for this project was to stretch and challenge myself. S3 provided a great opportunity to challenge 
-          myself while also learning more about web operations. I cannot understate how much I learned from this challenge. 
-          Conceptually, it stretched my understanding of cloud-based storage, application security, local memory, and writing 
-          code for multiple environments with deployment, all of which has deepened how I think and talk about software development.
-           Additionally, it taught me how to navigate lengthy and complex documentation. While it gave me a large headache at 
-          times, I developed an organized way to approach documentation to more efficiently find the answers I am looking for.</p>
-        </div>
-
-        <div class="content"> 
-          <h2>Next Steps for the Project</h2>
-          <p>Next steps for the project is implementing a statistics page where the user can have helpful data about the amount of 
-          times they have worn an item of clothing, the cost per wear of that item, and what items are worn the most and least. 
-          This feature was the reason I embarked on this project. I think clothes are a great tool for self expression, but 
-          closets can be very difficult to manage. I wanted an application that gave me data on my personal closet, so that 
-          I could keep it more organized and have a better sense of what clothes I actually wear and why.</p>
+          <div class="content">
+            <h2>Next Steps for the Project</h2>
+            <p>
+              Next steps for the project is implementing a statistics page where
+              the user can have helpful data about the amount of times they have
+              worn an item of clothing, the cost per wear of that item, and what
+              items are worn the most and least. This feature was the reason I
+              embarked on this project. I think clothes are a great tool for
+              self expression, but closets can be very difficult to manage. I
+              wanted an application that gave me data on my personal closet, so
+              that I could keep it more organized and have a better sense of
+              what clothes I actually wear and why.
+            </p>
+          </div>
         </div>
       </div>
-      </div>
-		</main>
-		<Footer />
-	</body>
+    </main>
+    <Footer />
+  </body><style>
+    .whole-doc {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-top: -70%;
+    }
+
+    .sticky {
+      width: 100%;
+      position: sticky;
+      top: 50px;
+      height: 100%;
+    }
+
+    .header-left {
+      width: 80%;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+      padding: 40px;
+    }
+
+    mark {
+      background-color: rgba(138, 201, 240, 0.75);
+      padding: 5px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .header-left img {
+      border-radius: 100%;
+      max-width: 100px;
+    }
+
+    video {
+      width: 50%;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .main-right {
+      margin-top: 100px;
+    }
+
+    @media (max-width: 1390px) {
+      .whole-doc {
+        /* margin-top: -600px;  */
+      }
+    }
+
+    @media (max-width: 1070px) {
+      .whole-doc {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0px;
+      }
+
+      .sticky {
+        position: static;
+        margin: auto;
+        max-width: 430px;
+      }
+
+      video {
+        margin: auto;
+        width: 100%;
+      }
+    }
+  </style>
 </html>
-
-<style> 
-
-.whole-doc { 
-  display: flex; 
-  flex-direction: row;
-  width: 100%;
-  margin-top: -70%; 
-}
-
-.sticky{ 
-  width: 100%; 
-  position: sticky; 
-  top: 50px;
-  height: 100%;
-
-}
-
-.header-left{ 
-  width: 80%;
-}
-
-.header-right{ 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60%;
-  padding: 40px; 
- 
- 
-}
-
-mark{ 
-	background-color: rgba(138, 201, 240, 0.75);
-	padding: 5px;
-}
-
-h1 { 
-  text-align: center;
-}
-
-.top{ 
-  display: flex; 
-  flex-direction: row;
-}
-
-
-
-
-
-
-
-.header-left img{ 
-  border-radius: 100%;
-  max-width: 100px;
-}
-
-video{ 
-  width: 50%;
-  border-radius: 10px;
-  margin-top: 40px;
-}
-
-.main-right { 
-  margin-top: 100px; ;
-}
-
-@media (max-width:1390px){ 
-  .whole-doc{ 
-    /* margin-top: -600px;  */
-  }
-}
-
-@media (max-width:1070px){ 
-  .whole-doc{ 
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0px;  
-  }
-
-  .sticky{ 
-    position: static;
-    margin:auto;
-    max-width: 430px;
-  }
-  
-  video{ 
-    margin: auto;
-    width: 100%;
-  }
-}
-
-</style>
