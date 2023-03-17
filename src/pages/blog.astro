@@ -6,84 +6,93 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1><mark>Writing Projects about code, life, and whatever is in-between.</mark></h1>
-			
-			<section>
-				<div>
-				<p>
-					 <a
-						href="https://medium.com/@victoria.mertens44/youre-doing-what-e881df6f8e34"
-						>You’re doing, what? - Shifting Gears Mid-Career
-					</a> 
-				</p>
-				<p>October 13, 2022.</p>
-			</div>
-				<div>
-				<p>
-					<a
-					 href="https://medium.com/@victoria.mertens44/what-i-know-at-28-that-i-never-would-have-known-at-18-207bddb0f1f9"
-					 >What I know at 28 that I NEVER would have known at 18.
-				 </a>
-			 </p>
-			 <p>October 31, 2022.</p>
-			</div>
-			<div>
-			 <p>
-				<a
-				 href="https://medium.com/@victoria.mertens44/accelerated-learning-day-one-can-you-keep-up-536421a84b68"
-				 >So, you want to be a Software Developer?— Day One: Can you keep up?
-			 </a> 
-		 </p>
-		 <p>November 1, 2022.</p>
-		</div>
-		 <div>
-		 <p>
-			<a
-			 href="https://medium.com/@victoria.mertens44/accelerated-learning-the-weekly-structure-68ca052c8044"
-			 >So, you want to be a Software Developer? — The Weekly Structure
-		 </a>
-	 </p>
-	 <p>November 14, 2022.</p>
-	</div>
-	 <div>
-	 <p>
-		<a
-		 href="https://medium.com/@victoria.mertens44/so-you-want-to-be-a-software-developer-learning-in-public-2d6b5a84d3a9"
-		 >So, you want to be a Software Developer? — Learning in Public
-	 </a>
- </p>
- <p>January 3, 2023.</p>
-</div>
-				<!-- <ul>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="page">
+        <div class="title-top">
+          <h1>Writing Projects</h1>
+        </div>
+        <section>
+          <div class="blog-link">
+            <p class="sub-title">So, you want to be a Software Developer?</p>
+            <p class="title">
+              <a
+                href="https://medium.com/@victoria.mertens44/youre-doing-what-e881df6f8e34"
+                >You’re doing, what? - Shifting Gears Mid-Career
+              </a>
+            </p>
+            <p class="date">October 13, 2022.</p>
+          </div>
+          <div class="blog-link">
+            <p class="sub-title">Lifestyle</p>
+            <p class="title">
+              <a
+                href="https://medium.com/@victoria.mertens44/what-i-know-at-28-that-i-never-would-have-known-at-18-207bddb0f1f9"
+                >What I know at 28 that I NEVER would have known at 18.
+              </a>
+            </p>
+            <p class="date">October 31, 2022.</p>
+          </div>
+          <div class="blog-link">
+            <p class="sub-title">So, you want to be a Software Developer?</p>
+            <p class="title">
+              <a
+                href="https://medium.com/@victoria.mertens44/accelerated-learning-day-one-can-you-keep-up-536421a84b68"
+                >Day One: Can you keep up?
+              </a>
+            </p>
+            <p class="date">November 1, 2022.</p>
+          </div>
+          <div class="blog-link">
+            <p class="sub-title">So, you want to be a Software Developer?</p>
+            <p class="title">
+              <a
+                href="https://medium.com/@victoria.mertens44/accelerated-learning-the-weekly-structure-68ca052c8044"
+                >The Weekly Structure
+              </a>
+            </p>
+            <p class="date">November 14, 2022.</p>
+          </div>
+          <div class="blog-link">
+            <p class="sub-title">So, you want to be a Software Developer?</p>
+            <p class="title">
+              <a
+                href="https://medium.com/@victoria.mertens44/so-you-want-to-be-a-software-developer-learning-in-public-2d6b5a84d3a9"
+                >Learning in Public
+              </a>
+            </p>
+            <p class="date">January 3, 2023.</p>
+          </div>
+          <!-- <ul>
 					{
 						posts.map((post) => (
 							<li>
@@ -99,23 +108,50 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 						))
 					}
 				</ul> -->
-			</section>
-		</main>
-		<Footer />
-	</body>
+        </section>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      .title-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      section {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .blog-link {
+        border: 1px black solid;
+        margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 5px;
+        box-shadow: 10px 10px 10px grey;
+        padding: 25px;
+      }
+
+      h1 {
+        letter-spacing: 0.3rem;
+        font-weight: 100;
+        font-size: 50px;
+      }
+
+      .sub-title {
+        color: grey;
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-size: 35px;
+        margin-top: -10px;
+      }
+      .date {
+        margin-left: 50px;
+        margin-top: -30px;
+      }
+    </style>
+  </body>
 </html>
-
-<style>mark{ 
-	background-color: rgba(138, 201, 240, 0.75);
-	padding: 5px; 
-}
-
-section{ 
-	display: flex; 
-	flex-direction: column-reverse;
-
-
-}
-
-</style>
-
