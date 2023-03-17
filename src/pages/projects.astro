@@ -24,21 +24,27 @@ let mwpDescription =
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <h1><mark>Software Development Projects:</mark></h1>
-      <Card
-        title="Happy Closet"
-        image_src="/happy_closet_icon.jpg"
-        video_src="/HC-demo-vid-compressed.mp4"
-        url="/projects/happy_closet"
-        description={hcDescription}
-      />
-      <Card
-        title="Minnesota Women's Press Content Manager"
-        image_src="/MWP-icon.png"
-        video_src="/mwp-demo-website.mp4"
-        url="/projects/womens_press"
-        description={mwpDescription}
-      />
+      <h1>Software Development Projects</h1>
+      <div class="proj-cards">
+        <div class="card">
+          <Card
+            title="Happy Closet"
+            image_src="/happy_closet_icon.jpg"
+            video_src="/HC-demo-vid-compressed.mp4"
+            url="/projects/happy_closet"
+            description={hcDescription}
+          />
+        </div>
+        <div class="card">
+          <Card
+            title="Minnesota Women's Press Content Manager"
+            image_src="/MWP-icon.png"
+            video_src="/mwp-demo-website.mp4"
+            url="/projects/womens_press"
+            description={mwpDescription}
+          />
+        </div>
+      </div>
     </main>
     <Footer />
     <style>
@@ -49,12 +55,30 @@ let mwpDescription =
 
       h1 {
         text-align: center;
+        margin: 100px;
+        letter-spacing: 0.3rem;
+        font-weight: 100;
+        font-size: 50px;
       }
 
       main {
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      .proj-cards {
+        display: flex;
+        flex-direction: row;
+      }
+      @media (max-width: 1586px) {
+        .proj-cards {
+          flex-direction: column;
+        }
+      }
+
+      .card {
+        margin: 50px;
       }
     </style>
   </body>
