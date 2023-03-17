@@ -23,7 +23,7 @@ let mwpDescription =
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <div class="card">
+      <div class="page-top">
         <h2>
           <mark
             >Software Engineer seeking employer for steady relationship.</mark
@@ -40,26 +40,41 @@ let mwpDescription =
         </p>
       </div>
       <h1 class="project">Projects</h1>
-      <Card
-        title="Happy Closet"
-        image_src="/happy_closet_icon.jpg"
-        video_src="HC-demo-vid-compressed.mp4"
-        description={hcDescription}
-        url="/projects/happy_closet"
-      />
-      <Card
-        title="Minnesota Women's Press Content Manager"
-        image_src="/MWP-icon.png"
-        video_src="/mwp-demo-website.mp4"
-        url="/projects/womens_press"
-        description={mwpDescription}
-      />
+      <div class="proj-cards">
+        <div class="card">
+          <Card
+            title="Happy Closet"
+            image_src="/happy_closet_icon.jpg"
+            video_src="HC-demo-vid-compressed.mp4"
+            description={hcDescription}
+            url="/projects/happy_closet"
+          />
+        </div>
+        <div class="card">
+          <Card
+            title="Minnesota Women's Press Content Manager"
+            image_src="/MWP-icon.png"
+            video_src="/mwp-demo-website.mp4"
+            url="/projects/womens_press"
+            description={mwpDescription}
+          />
+        </div>
+      </div>
     </main>
     <Footer />
     <style>
-      .card {
+      .page-top {
         max-width: 700px;
         margin: 12px;
+      }
+      .proj-cards {
+        display: flex;
+        flex-direction: row;
+      }
+      @media (max-width: 1504px) {
+        .proj-cards {
+          flex-direction: column;
+        }
       }
       mark {
         background-color: rgba(138, 201, 240, 0.75);
@@ -90,6 +105,10 @@ let mwpDescription =
       .project {
         letter-spacing: 0.3rem;
         font-weight: 100;
+      }
+
+      .card {
+        margin: 50px;
       }
     </style>
   </body>
