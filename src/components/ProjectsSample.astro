@@ -6,7 +6,16 @@ const props = Astro.props;
 
 <div class="project-card">
   <div class="project-header">
-    <img class="logo" src={props.image_src} />
+    {
+      props.title === "Minnesota Women's Press Content Manager" && (
+        <img class="logo-mwp" src={props.image_src} />
+      )
+    }
+    {
+      props.title !== "Minnesota Women's Press Content Manager" && (
+        <img class="logo" src={props.image_src} />
+      )
+    }
     <h2>{props.title}</h2>
   </div>
   <div class="project-body">
@@ -40,9 +49,16 @@ const props = Astro.props;
     align-items: center;
   }
 
-  .project-card img {
+  img {
     width: 100px;
     border-radius: 100%;
+  }
+
+  .logo-mwp {
+    border-radius: 0%;
+    height: auto;
+    width: 300px;
+    margin-top: 30px;
   }
   .project-header {
     display: flex;
