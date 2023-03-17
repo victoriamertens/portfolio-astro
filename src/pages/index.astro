@@ -24,11 +24,11 @@ let mwpDescription =
     <Header title={SITE_TITLE} />
     <main>
       <div class="card">
-        <h1>
+        <h2>
           <mark
             >Software Engineer seeking employer for steady relationship.</mark
           >
-        </h1>
+        </h2>
 
         <p>
           I am a passionate geek, wholeheartedly and without apology. I love
@@ -39,7 +39,7 @@ let mwpDescription =
           am always up for a good recipe for Pad-Thai, Ramen, or Hot Dish.
         </p>
       </div>
-      <h2>Projects</h2>
+      <h1 class="project">Projects</h1>
       <Card
         title="Happy Closet"
         image_src="/happy_closet_icon.jpg"
@@ -78,9 +78,25 @@ let mwpDescription =
         flex-direction: column;
         align-items: center;
       }
+      p {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        line-height: 40px;
+        font-size: 20px;
+        font-family: serif;
+      }
+      h1 {
+        margin-bottom: 100px;
+        font-size: 50px;
+      }
 
       h2 {
+        font-size: 35px;
         margin-top: 50px;
+      }
+      .project {
+        letter-spacing: 0.3rem;
+        font-weight: 100;
       }
     </style>
   </body>

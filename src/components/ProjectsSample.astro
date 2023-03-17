@@ -6,7 +6,7 @@ const props = Astro.props;
 
 <div class="project-card">
   <div class="project-header">
-    <img src={props.image_src} />
+    <img class="logo" src={props.image_src} />
     <h2>{props.title}</h2>
   </div>
   <div class="project-body">
@@ -50,7 +50,35 @@ const props = Astro.props;
     align-items: center;
   }
 
+  .project-header h2 {
+    letter-spacing: 0.2rem;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(51, 50, 50);
+    margin: 50px;
+    margin-top: 30px;
+  }
+
   .project-body video {
     width: 80%;
+    max-height: 500px;
+  }
+
+  .project-body p {
+    margin: 50px;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    margin: 25px;
+  }
+
+  .project-footer a {
+    font-size: 20px;
+  }
+
+  .project-footer {
+    margin-bottom: 30px;
   }
 </style>
