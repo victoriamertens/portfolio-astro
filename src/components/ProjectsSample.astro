@@ -7,12 +7,12 @@ const props = Astro.props;
 <div class="project-card">
   <div class="project-header">
     {
-      props.title === "Minnesota Women's Press Content Manager" && (
+      props.title === 'MWP Content Manager' && (
         <img class="logo-mwp" src={props.image_src} />
       )
     }
     {
-      props.title !== "Minnesota Women's Press Content Manager" && (
+      props.title !== 'MWP Content Manager' && (
         <img class="logo" src={props.image_src} />
       )
     }
@@ -74,6 +74,7 @@ const props = Astro.props;
     color: rgb(51, 50, 50);
     margin: 50px;
     margin-top: 30px;
+    line-height: 3.5rem;
   }
 
   .project-body video {
