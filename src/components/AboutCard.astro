@@ -1,0 +1,30 @@
+---
+//Imports go here
+
+const props = Astro.props;
+---
+
+<div class="about-card">
+  <img src={props.image}/> 
+  <div class="description">
+    <p>{props.description}</p>
+  </div>
+</div>
+
+<style>
+.about-card{ 
+  display: flex;  
+  flex-direction: column;
+ 
+}
+
+  img { 
+    width: 400px;
+    height: auto;
+  }
+
+  .description{ 
+    background-color: white;
+    
+  }
+</style>
