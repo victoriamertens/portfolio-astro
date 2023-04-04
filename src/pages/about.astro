@@ -17,43 +17,86 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
   <body>
     <Header title={SITE_TITLE} />
     <main>
+      <div id="about-div">
       <div id="main-description">
+        <div id="main-right">
+        <h1>Hi, I am Victoria!</h1>
         <h2> I think I am pretty cool, but I am a bit biased. </h2>
         <p>At my core, I am a creator and a learner. I love to build and create things, whether they are stored in 8-bit, use a drill bit, or are just a bit of my imagination. My projects often push me to learn new things and develop new skills so that I never stop learning.</p>
       </div>
-      <img src='../public/about-hike.jpg' />
-      
-      <div id="work-des">
-       <p >I am fueled by a drive to continue learning and growing in the software industry. I consider myself a "forever student," eager to build on my skills of Software Development and utilize the 'soft-skills' I developed working in Healthcare. I have developed projects using Javascript, React, Redux, jQuery, Amazon Web Services S3, Node.js, express, and SQL, and am currently learning Typescript. Check them out on my <a href='/projects/'>Projects Page</a>! </p>
+      <div id="main-left">
+        <img id="hike" src='../public/about-hike.jpg' />
       </div>
+      </div>
+
+    <div id="work-description">
+      <div id="work-des">
+        <p >I am fueled by a drive to continue learning and growing in the software industry. I consider myself a "forever student," eager to build on my skills of Software Development and utilize the 'soft-skills' I developed working in Healthcare. I have developed projects using Javascript, React, Redux, jQuery, Amazon Web Services S3, Node.js, express, and SQL, and am currently learning Typescript. Check them out on my <a href='/projects/'>Projects Page</a>! </p>
+       </div>
       <img src='../public/about-work.jpg' />
+    </div>
+     
+     
+      
+      
+      
       <div><h2>But, I like to have fun too. </h2><p>My friends would describe me as quirky and silly, and I can't agrue with that.</p></div>
       <img src='../public/about-very-silly.jpg' />
       <div><p> I believe we are at our best when we allow ourselves to have fun and explore things that make us unique. That is why I am as serious about my hobbies as I am about my career. By day, I design and build website applications, but at night you can find me busy writing and reading, climbing on colorful rock walls, cooking new dishes, restoring old furniture, or designing and sewing my own clothing.</p></div>
       <img src='../public/about-silly.jpg' />
       
+    </div>
     </main>
     <Footer />
     <style>
-      main{   
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        }
+     
+     #about-div{ 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
-      #main-description{ 
+     }
+     #main-description{ 
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      img{ 
-        width: 80%;
+        flex-direction: row-reverse;
       }
 
-      p{ 
-        width: 70%;
+      #hike{ 
+        max-width: 500px;
+      }
+
+      #main-right{ 
+        margin: 20px;
+        
+      }
+
+      #main-right h1, h2, p { 
+      padding: 15px; 
+        letter-spacing: 3px;
+        
+        
+      }
+
+      #main-right h1{ 
+        margin-left: -150px; 
+        background-color: rgb(0, 128, 83);
+        color: white;
+        padding-left: 30%;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 1px rgb(23, 23, 23);
+        
+      }
+      #work-description{ 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      #work-des{ 
+        background-color: rgb(52, 103, 157);
+        width: 70%; 
+        border-radius: 5px;
+        margin-top: 100px;
+        
       }
 
 
