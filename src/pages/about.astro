@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Flower from '../components/FlowerAnnimation.astro'
 
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
@@ -28,6 +29,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
       <div id="main-left">
         <img id="hike" src='../public/about-hike.jpg' />
       </div>
+      
       </div>
 
       <div id="work-description">
@@ -49,8 +51,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
           <p> I believe we are at our best when we allow ourselves to have fun and explore things that make us unique. That is why I am as serious about my hobbies as I am about my career. By day, I design and build website applications, but at night you can find me busy writing and reading, climbing on colorful rock walls, cooking new dishes, restoring old furniture, or designing and sewing my own clothing.</p></div>
         </div>
       </div>
-      
-      
+      <Flower /> 
+    
     </main>
     <Footer />
     <style>
@@ -146,7 +148,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
       }
 
       #fun-des{ 
-        background-color: rgb(158, 158, 241);
+        /* background-color: rgb(158, 158, 241); */
+        margin-bottom: 300px; 
       }
 
  
