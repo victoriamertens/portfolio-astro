@@ -1,0 +1,116 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from './../config';
+import photo from '/bulldog-photo.jpg';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div>
+        <h1 id="about-title">About</h1>
+        <h3 id="intro">
+          I'm Victoria. A web developer, creator and problem solver.
+        </h3>
+        <div id="about-full">
+          <div id="about-left">
+            <p>
+              I haven't always been a developer. I hit the reset button on a
+              previous career, turning from healthcare to software. I thought it
+              would be a hard turn, but turns out being a healthcare provider
+              made me a better developer because:
+            </p>
+            <ul>
+              <li>
+                I apply user centered design principles, developing applications
+                through the lens of what the user wants and needs.
+              </li>
+              <li>
+                I value accessibility and am adamant about following the<a
+                  href="https://equalizedigital.com/web-accessibility-p-o-u-r-acronym/"
+                >
+                  POUR principles</a
+                > because I have seen the direct impacts they have on differently
+                abled users.
+              </li>
+              <li>
+                I know how to 'triage' issues and tasks, organizing them into
+                priority levels and working effectively 'discharge' each task.
+              </li>
+            </ul>
+            <p>
+              Now, I am excited to begin my career building web applications.
+              What excites me most about working in software development is
+              being able to design and create things that have purpose and solve
+              real world problems.
+            </p>
+            <p>
+              When I am away from my computer, I am probably on a walking trail
+              getting overly excited at passing dogs, struggling through a yoga
+              session at the gym, or cooking a new recipe. If you have a
+              favorite family recipe, I'd love to hear about it! I am always up
+              for a good recipe for Pad-Thai, Ramen, or Hot Dish.
+            </p>
+          </div>
+          <div id="about-right">
+            <img src={photo} id="bulldog-photo" />
+          </div>
+        </div>
+      </div>
+      <Footer />
+      <style>
+        main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #about-title {
+          margin-top: 100px;
+          font-size: 100px;
+          font-weight: lighter;
+          letter-spacing: 0.3rem;
+        }
+
+        #intro {
+          font-size: 30px;
+          letter-spacing: 0.1rem;
+          font-weight: lighter;
+        }
+        #about-full {
+          display: flex;
+          flex-direction: row;
+
+          max-width: 950px;
+        }
+
+        #about-left {
+          margin: 0px 30px;
+        }
+        #bulldog-photo {
+          border-radius: 10px;
+          box-shadow: 40px 40px 10px rgb(124, 80, 124);
+        }
+
+        @media (max-width: 1319px) {
+          #about-full {
+            /* background-color: blue; */
+            flex-direction: column-reverse;
+            align-items: center;
+          }
+          #bulldog-photo {
+            height: 700px;
+            object-fit: contain;
+            box-shadow: none;
+          }
+        }
+      </style>
+    </main>
+  </body>
+</html>
