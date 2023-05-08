@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from './../config';
+import photo from '../../public/bulldog-photo.jpg';
 ---
 
 <!DOCTYPE html>
@@ -13,37 +14,75 @@ import { SITE_TITLE, SITE_DESCRIPTION } from './../config';
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <h1>About</h1>
-      <h3>I'm Victoria. A Web developer, creator and problem solver.</h3>
-      <p>
-        I haven't always been a developer. I hit the reset button on a previous
-        career, turning from healthcare to software. I thought it would be a
-        hard turn, but turns out being a healthcare provider made me a better
-        developer.
-      </p>
-      <p>
-        I think in the prospective of the user, and design applications through
-        the lens of what the user wants and needs.
-      </p>
-      <p>
-        I value accessibility and am adamant about following the POUR principles
-        (percievable, operable, understandable, and robust) because I have seen
-        the direct impacts difficult applications have on differently abled
-        users.
-      </p>
-      <p>
-        I know how to 'triage' issues and tasks, organizing them into levels
-        priority and working effectively 'discharge' each task.
-      </p>
-      <p>
-        Now, I am excited to begin my journey building web applications. What
-        excites me most about working in software development is being able to
-        design and create things that have purpose and solve real world
-        problems. I love connecting users to data that makes their lives easier,
-        whether that be in their personal or professional lives.
-      </p>
+      <h1 id="about-title">About</h1>
+      <h3 id="intro">
+        I'm Victoria. A web developer, creator and problem solver.
+      </h3>
+      <div id="about-full">
+        <div id="about-left">
+          <p>
+            I haven't always been a developer. I hit the reset button on a
+            previous career, turning from healthcare to software. I thought it
+            would be a hard turn, but turns out being a healthcare provider made
+            me a better developer because:
+          </p>
+          <ul>
+            <li>
+              I apply user centered design principles, developing applications
+              through the lens of what the user wants and needs.
+            </li>
+            <li>
+              I value accessibility and am adamant about following the POUR
+              principles (percievable, operable, understandable, and robust)
+              because I have seen the direct impacts difficult applications have
+              on differently abled users.
+            </li>
+            <li>
+              I know how to 'triage' issues and tasks, organizing them into
+              levels priority and working effectively 'discharge' each task.
+            </li>
+          </ul>
+          <p>
+            Now, I am excited to begin my journey building web applications.
+            What excites me most about working in software development is being
+            able to design and create things that have purpose and solve real
+            world problems. I love connecting users to data that makes their
+            lives easier, whether that be in their personal or professional
+            lives.
+          </p>
+          <p>
+            When I am away from my computer, I love rock climbing, cooking,
+            sewing and writing/illustrating my graphic novel.
+          </p>
+        </div>
+        <div id="about-right">
+          <img src={photo} id="bulldog-photo" />
+        </div>
+      </div>
+      <Footer />
+      <style>
+        #about-title {
+          margin-top: 100px;
+          font-size: 100px;
+          font-weight: lighter;
+        }
+
+        #intro {
+          font-size: 30px;
+        }
+        #about-full {
+          display: flex;
+          flex-direction: row;
+        }
+
+        #about-left {
+          margin: 0px 30px;
+        }
+        #bulldog-photo {
+          border-radius: 10px;
+          box-shadow: 40px 40px 10px rgb(124, 80, 124);
+        }
+      </style>
     </main>
-    <Footer />
-    <style></style>
   </body>
 </html>
