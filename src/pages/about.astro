@@ -7,7 +7,14 @@ import Flower from '../components/FlowerAnnimation.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
-<!DOCTYPE html>
+<script>
+  function annimateTransitions() {
+    setTimeout(() => console.log('Testing'), 500);
+  }
+
+  annimateTransitions();
+</script>
+
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -78,6 +85,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
     </main>
     <Footer />
     <style>
+      @keyframes transitionIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
       #about-div {
         display: flex;
         flex-direction: column;
@@ -90,10 +107,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
       #hike {
         max-width: 500px;
+        animation-name: transitionIn;
+        animation-duration: 2s;
+      }
+
+      #main-left {
+        width: 500px;
+        /* height: 800px; */
       }
 
       #main-right {
         margin: 20px;
+
+        animation-name: transitionIn;
+        animation-duration: 2s;
+
+        z-index: 1;
       }
 
       #main-right h1,
