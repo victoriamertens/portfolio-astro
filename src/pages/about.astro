@@ -2,11 +2,19 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from './../config';
-import photo from '/bulldog-photo.jpg';
+import Flower from '../components/FlowerAnnimation.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
-<!DOCTYPE html>
+<script>
+  function annimateTransitions() {
+    setTimeout(() => console.log('Testing'), 500);
+  }
+
+  annimateTransitions();
+</script>
+
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -14,103 +22,278 @@ import photo from '/bulldog-photo.jpg';
   <body>
     <Header title={SITE_TITLE} />
     <main>
-      <div>
-        <h1 id="about-title">About</h1>
-        <h3 id="intro">
-          I'm Victoria. A web developer, creator and problem solver.
-        </h3>
-        <div id="about-full">
-          <div id="about-left">
+      <div id="about-div">
+        <div id="main-description">
+          <div id="main-right">
+            <h1>Hi, I am Victoria!</h1>
+            <h2>I think I am pretty cool, but I am a bit biased.</h2>
             <p>
-              I haven't always been a developer. I hit the reset button on a
-              previous career, turning from healthcare to software. I thought it
-              would be a hard turn, but turns out being a healthcare provider
-              made me a better developer because:
-            </p>
-            <ul>
-              <li>
-                I apply user centered design principles, developing applications
-                through the lens of what the user wants and needs.
-              </li>
-              <li>
-                I value accessibility and am adamant about following the<a
-                  href="https://equalizedigital.com/web-accessibility-p-o-u-r-acronym/"
-                >
-                  POUR principles</a
-                > because I have seen the direct impacts they have on differently
-                abled users.
-              </li>
-              <li>
-                I know how to 'triage' issues and tasks, organizing them into
-                priority levels and working effectively 'discharge' each task.
-              </li>
-            </ul>
-            <p>
-              Now, I am excited to begin my career building web applications.
-              What excites me most about working in software development is
-              being able to design and create things that have purpose and solve
-              real world problems.
-            </p>
-            <p>
-              When I am away from my computer, I am probably on a walking trail
-              getting overly excited at passing dogs, struggling through a yoga
-              session at the gym, or cooking a new recipe. If you have a
-              favorite family recipe, I'd love to hear about it! I am always up
-              for a good recipe for Pad-Thai, Ramen, or Hot Dish.
+              At my core, I am a creator and a learner. I love to build and
+              create things, whether they are stored in 8-bit, use a drill bit,
+              or are just a bit of my imagination. My projects often push me to
+              learn new things and develop new skills so that I never stop
+              learning.
             </p>
           </div>
-          <div id="about-right">
-            <img src={photo} id="bulldog-photo" />
+          <div id="main-left">
+            <img id="hike" src="../about-hike.jpg" />
+          </div>
+        </div>
+        <h2 id="work-title">
+          I am driven to continue learning and growing in the software industry.
+        </h2>
+        <div id="work-description">
+          <img id="work" src="../about-work.jpg" />
+          <div id="work-des">
+            <p>
+              I consider myself a "forever student," eager to build on my skills
+              of Software Development and utilize the 'soft-skills' I developed
+              working in Healthcare. I have developed projects using Javascript,
+              React, Redux, jQuery, Amazon Web Services S3, Node.js, express,
+              and SQL, and am currently learning Typescript. Check them out on
+              my <a href="/projects/">Projects Page</a>!
+            </p>
+          </div>
+        </div>
+
+        <div id="fun">
+          <div id="funny">
+            <h2>But, I like to have fun too.</h2>
+            <p>
+              My friends would describe me as quirky and silly, and I can't
+              agrue with them.
+            </p>
+          </div>
+          <div id="fun-row">
+            <img src="../about-very-silly.jpg" />
+            <img src="../about-silly.jpg" />
+          </div>
+          <div id="fun-des">
+            <p>
+              I believe we are at our best when we allow ourselves to have fun
+              and explore things that make us unique. That is why I am as
+              serious about my hobbies as I am about my career. By day, I design
+              and build website applications, but at night you can find me busy
+              writing and reading, climbing on colorful rock walls, cooking new
+              dishes, restoring old furniture, or designing and sewing my own
+              clothing.
+            </p>
           </div>
         </div>
       </div>
-      <Footer />
-      <style>
-        main {
+      <Flower />
+    </main>
+    <Footer />
+    <style>
+      @keyframes transitionIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #about-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #main-description {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      #hike {
+        max-width: 500px;
+        animation-name: transitionIn;
+        animation-duration: 2s;
+      }
+
+      #main-left {
+        width: 500px;
+        /* height: 800px; */
+      }
+
+      #main-right {
+        margin: 20px;
+
+        animation-name: transitionIn;
+        animation-duration: 2s;
+
+        z-index: 1;
+      }
+
+      #main-right h1,
+      h2,
+      p {
+        padding: 15px;
+        letter-spacing: 3px;
+      }
+
+      #main-right h1 {
+        margin-left: -150px;
+        background-color: rgb(0, 128, 83);
+        color: white;
+        padding-left: 30%;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 1px rgb(23, 23, 23);
+      }
+
+      #work-title {
+        margin-top: 200px;
+      }
+      #work-description {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      #work-des {
+        /* background-color: rgb(52, 103, 157); */
+        width: 60%;
+        border-radius: 5px;
+        margin-right: 20px;
+
+        /* color: white; */
+      }
+      #work-des a {
+        color: rgb(26, 1, 248);
+      }
+
+      #work {
+        width: 600px;
+        border: rgb(118, 187, 229) 20px solid;
+      }
+
+      #fun {
+        margin-top: 200px;
+      }
+
+      #fun h2 {
+        margin-bottom: -20px;
+      }
+
+      #fun p {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      #fun-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      #fun-row img {
+        max-width: 450px;
+        aspect-ratio: initial;
+        border: 5px solid rgb(38, 100, 63);
+        border-radius: 5px;
+      }
+
+      #fun-des {
+        /* background-color: rgb(158, 158, 241); */
+        margin-bottom: 300px;
+      }
+
+      @media (max-width: 1275px) {
+        #work {
+          max-width: 400px;
+        }
+        #fun-row img {
+          max-width: 350px;
+        }
+      }
+
+      @media (max-width: 1080px) {
+        #main-right {
+          margin: 10px;
+        }
+
+        #main-right h1,
+        h2,
+        p {
+          padding: 5px;
+          letter-spacing: 2px;
+        }
+        #hike {
+          max-width: 300px;
+        }
+        #work {
+          max-width: 400px;
+          border: rgb(118, 187, 229) 5px solid;
+        }
+
+        #work-description {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-        #about-title {
-          margin-top: 100px;
-          font-size: 100px;
-          font-weight: lighter;
-          letter-spacing: 0.3rem;
+        #fun-row img {
+          max-width: 350px;
         }
+      }
 
-        #intro {
-          font-size: 30px;
-          letter-spacing: 0.1rem;
-          font-weight: lighter;
+      @media (max-width: 909px) {
+        #main-right h1 {
+          background-color: rgb(7, 233, 154);
         }
-        #about-full {
+        #main-description {
           display: flex;
-          flex-direction: row;
-
-          max-width: 950px;
+          flex-direction: column;
+        }
+        #main-right {
+          margin: 10px;
+        }
+        #main-right h1 {
+          margin-left: 0px;
         }
 
-        #about-left {
-          margin: 0px 30px;
+        #main-right h1,
+        h2,
+        p {
+          padding: 5px;
+          letter-spacing: 2px;
         }
-        #bulldog-photo {
-          border-radius: 10px;
-          box-shadow: 40px 40px 10px rgb(124, 80, 124);
+        #hike {
+          max-width: 70%;
+        }
+        #work {
+          max-width: 400px;
+          border: rgb(118, 187, 229) 5px solid;
         }
 
-        @media (max-width: 1319px) {
-          #about-full {
-            /* background-color: blue; */
-            flex-direction: column-reverse;
-            align-items: center;
-          }
-          #bulldog-photo {
-            height: 700px;
-            object-fit: contain;
-            box-shadow: none;
-          }
+        #work-des {
+          /* background-color: rgb(52, 103, 157); */
+          width: 80%;
+          border-radius: 5px;
+          margin-right: 20px;
+
+          /* color: white; */
         }
-      </style>
-    </main>
+        #work-description {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #fun-row img {
+          max-width: 300px;
+        }
+        #fun {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        #fun-row {
+          flex-direction: column;
+          margin: 10px;
+        }
+
+        #fun-row img {
+          margin: 5px;
+        }
+      }
+    </style>
   </body>
 </html>
